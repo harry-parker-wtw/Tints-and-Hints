@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Dark tabletop theme — this app has one theme, not a light/dark toggle.
+  Values below are our design tokens converted to the H S% L% triplets
+  shadcn/Tailwind expect (used as hsl(var(--x)) in tailwind.config.ts).
+
+    --felt        #16181C  -> --background
+    --board       #232629  -> --card / --popover
+    --chip-cream  #F1EAD9  -> --foreground
+    --edge        #3A3E42  -> --border / --input
+    --accent      #E8B24B  -> --primary  (brass — current turn, primary actions)
+    --accent-warm #C1503A  -> --destructive (rust — reveal/scoring emphasis)
+*/
+:root,
+.dark {
+  --background: 220 12% 10%;
+  --foreground: 42 46% 90%;
+
+  --card: 210 8% 15%;
+  --card-foreground: 42 46% 90%;
+
+  --popover: 210 8% 15%;
+  --popover-foreground: 42 46% 90%;
+
+  --primary: 39 77% 60%;
+  --primary-foreground: 220 15% 8%;
+
+  --secondary: 210 8% 20%;
+  --secondary-foreground: 42 46% 90%;
+
+  --muted: 210 8% 18%;
+  --muted-foreground: 210 6% 60%;
+
+  --accent: 210 8% 22%;
+  --accent-foreground: 42 46% 90%;
+
+  --destructive: 10 54% 49%;
+  --destructive-foreground: 42 46% 90%;
+
+  --border: 210 6% 24%;
+  --input: 210 6% 24%;
+  --ring: 39 77% 60%;
+
+  --radius: 0.375rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
